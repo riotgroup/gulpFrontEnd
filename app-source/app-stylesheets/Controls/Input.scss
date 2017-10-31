@@ -1,0 +1,35 @@
+.form-control {
+    &[type=text]
+    {
+        box-sizing: border-box;
+        border: $control-border;
+        border-radius: $control-border-radius;
+        height: $control-height;
+        padding: $control-padding;
+
+        &:disabled {
+            background: $control-background__disabled;
+        }
+    }
+}
+
+/* Grops controls */
+.group-control {
+    .form-control {
+        &[type=text] {
+            border-radius: 0;
+
+            &:first-child {
+                border-right: none;
+                border-top-left-radius: $control-border-radius;
+                border-bottom-left-radius: $control-border-radius;
+            }
+
+            &:last-child {
+                border-left: none;
+                border-top-right-radius: $control-border-radius;
+                border-bottom-right-radius: $control-border-radius;
+            }
+        }
+    }
+}

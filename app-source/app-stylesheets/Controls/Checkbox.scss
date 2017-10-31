@@ -1,0 +1,45 @@
+$checkbox-size  : 18px;
+$checkbox-color : $brand-color-default;
+$checkbox-color-disabled : $brand-color-secondary;
+
+.form-control {
+    & > [type="checkbox"]
+    {
+        margin-right: 10px;
+        position: relative;
+
+        &:after {
+            background: #FFF;
+            border: 2px solid $checkbox-color;
+            border-radius: $control-border-radius;
+            box-sizing: border-box;
+            content: " ";
+            display: inline-block;
+            width: $checkbox-size;
+            height: $checkbox-size;
+            position: absolute;
+            margin-top: -2px;
+        }
+
+        &:checked {
+            &:after {
+                background: $checkbox-color;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><polyline class="a" points="3.5 8.93 6 12.43 12.5 4.93"/></svg>');
+                background-position: -1px -2px;
+            }
+        }
+
+        &:disabled {
+            &:after {
+                border-color: $checkbox-color-disabled;
+            }
+
+            &:checked:after {
+                background: $checkbox-color-disabled;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><polyline class="a" points="3.5 8.93 6 12.43 12.5 4.93"/></svg>');
+                background-position: -1px -2px;
+            }
+        }
+    }
+
+}

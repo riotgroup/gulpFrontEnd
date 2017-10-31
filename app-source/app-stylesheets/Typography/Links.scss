@@ -1,0 +1,9 @@
+a {
+    &[data-ajax] {
+        border-bottom-style: dotted;
+    }
+
+    &[data-modal] {
+        border-bottom-style: dashed;
+    }
+}

@@ -1,0 +1,23 @@
+$control-background: #FFF;
+$control-background__disabled: #f2f2f2;
+
+$control-border-color: $brand-color-default;
+$control-border-radius: 3px;
+$control-border: 2px solid $control-border-color !default;
+
+$control-padding: 1rem;
+$control-height: 36px !default;
+$control-height__large: 40px !default;
+
+$control-placeholder-color: #999;
+
+// --------------------------------------------------------------
+
+.form-control * {
+    outline: none;
+}
+
+@import 'Controls/Dropdown';
+@import 'Controls/Input';
+@import 'Controls/Checkbox';
+@import 'Controls/Button';

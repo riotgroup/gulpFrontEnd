@@ -1,0 +1,90 @@
+{% extends 'Layout.twig' %}
+{% block CONTENT %}
+
+<div class="window">
+
+    <h2>Form controls</h2>
+
+    <p><strong>Dropdown</strong></p>
+    {{ forms.ui_select('dropdown', {0 : 'Вариант 1', 1 : 'Вариант 2', 2 : 'Вариант 3'}, '1', 'placeholder="placeholder" data-search="true"') }}
+
+    <p><strong>Inputs</strong></p>
+    <p>
+        <input type="text" class="form-control" placeholder="input">
+        <input type="text" class="form-control" placeholder="disabled" disabled="true">
+    </p>
+
+    <p><strong>Group inputs</strong></p>
+
+    <span class="group-control">
+        {% spaceless %}
+        <input type="text" class="form-control" placeholder="item 1">
+        <input type="text" class="form-control" placeholder="item 2">
+        <input type="text" class="form-control" placeholder="item 3">
+        {% endspaceless %}
+    </span>
+
+    <p><strong>Checked input</strong></p>
+    <p>
+        <label class="form-control"><input type="checkbox">Default</label>
+        <label class="form-control"><input type="checkbox" checked="true">Checked</label>
+        <label class="form-control"><input type="checkbox" disabled>Disabled</label>
+    </p>
+
+    <p><strong>Radio input</strong></p>
+    <p>
+        <label class="form-control"><input name="radio" type="radio">Default</label>
+        <label class="form-control"><input name="radio" type="radio" checked="true">Selected</label>
+        <label class="form-control"><input name="radio" type="radio" disabled="disabled">Disabled</label>
+    </p>
+
+    <p><strong>Button-o</strong></p>
+    <p>
+        <button type="button" class="form-control-o">Default</button>
+        <button type="button" class="form-control-o form-control-o__default">Default color</button>
+        <button type="button" class="form-control-o form-control-o__primary">Primary</button>
+        <button type="button" class="form-control-o form-control-o__secondary">Secondary</button>
+        <button type="button" class="form-control-o form-control-o__link">Link</button>
+    </p>
+
+    <p><strong>Button</strong></p>
+    <p>
+        <button type="button" class="form-control">Default</button>
+        <button type="button" class="form-control form-control__default">Default color</button>
+        <button type="button" class="form-control form-control__primary">Primary</button>
+        <button type="button" class="form-control form-control__secondary">Secondary</button>
+        <button type="button" class="form-control form-control__link">Link</button>
+    </p>
+
+    <p><strong>Button disabled</strong></p>
+    <p>
+        <button type="button" class="form-control" disabled="disabled">Default</button>
+        <button type="button" class="form-control form-control__default" disabled="disabled">Default color</button>
+        <button type="button" class="form-control form-control__primary" disabled="disabled">Primary</button>
+        <button type="button" class="form-control form-control__secondary" disabled="disabled">Secondary</button>
+        <button type="button" class="form-control form-control__link" disabled="disabled">Link</button>
+    </p>
+
+    <hr>
+
+    <h2>Links</h2>
+    <p>
+        <a href="javascript:void(0);">Links</a>
+        <a href="javascript:void(0);" data-ajax="true">Links ajax</a>
+        <a href="javascript:void(0);" data-modal="true">Open modal</a>
+    </p>
+
+    <hr>
+
+    <h2>Typography</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie varius sapien, nec egestas nulla sagittis sit amet. Pellentesque interdum felis urna, vel mattis massa scelerisque id. Mauris non elit tincidunt, pulvinar ipsum in, congue turpis. Mauris laoreet sollicitudin molestie. Phasellus quis elit tempus, pulvinar est quis, tristique odio. Nam quis leo turpis. Nulla condimentum nibh gravida augue pharetra, eu elementum orci condimentum.
+    </p>
+
+    <p>
+        Curabitur eu mauris ac est consectetur volutpat. Quisque iaculis pharetra nunc nec auctor. Etiam consequat luctus ante in consectetur. Etiam in condimentum mi. Quisque eu libero suscipit, rhoncus nibh at, hendrerit magna. Nunc blandit maximus varius. Sed id lacus lacinia, suscipit nibh sed, feugiat quam. Duis scelerisque, libero sit amet efficitur faucibus, ante ipsum consequat ligula, a ornare ipsum erat in nibh. In vel augue vestibulum, condimentum leo vestibulum, faucibus velit. Curabitur non ipsum eu libero malesuada ullamcorper. Pellentesque suscipit ligula id metus congue, vulputate venenatis orci molestie. Praesent pharetra quis neque at aliquet. Vivamus mauris mi, iaculis eu odio vitae, pulvinar laoreet dui. Duis ex nunc, scelerisque sit amet odio ac, blandit viverra ligula. Fusce sagittis ultrices neque, a sollicitudin ex euismod sit amet.
+    </p>
+
+</div>
+
+{% endblock %}

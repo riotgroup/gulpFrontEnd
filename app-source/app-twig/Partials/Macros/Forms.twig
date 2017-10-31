@@ -1,0 +1,9 @@
+{% macro ui_select(name, values, default, attr) %}
+<select name="{{ name }}" data-ui="true"{% if attr %} {{ attr }}{% endif %}>
+    {% spaceless %}
+    {% for key, value in values %}
+    <option value="{{ key }}"{% if default == key %} selected="selected"{% endif %}>{{ value }}</option>
+    {% endfor %}
+    {% endspaceless %}
+</select>
+{% endmacro %}

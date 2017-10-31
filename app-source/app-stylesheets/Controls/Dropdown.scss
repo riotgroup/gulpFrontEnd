@@ -1,0 +1,472 @@
+$width-tick: 30px;
+$control-hover-background: #e6f7ff;
+
+select[data-ui=true] {
+    background: transparent !important;
+    border: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    position: absolute;
+    z-index: 1;
+    margin-top: 23px !important;
+    margin-left: 5px !important;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.form-controls__dropdown {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    &-open {
+        .form-controls__dropdown-list {
+            display: block;
+        }
+    }
+
+    &-button {
+        background: $control-background;
+        border: $control-border;
+        border-radius: $control-border-radius;
+        min-width: 120px;
+        padding: 0;
+        position: relative;
+
+        &__container {
+            display: table;
+            width: 100%;
+            height: $control-height;
+        }
+    }
+
+    &-text,
+    &-tick {
+        display: table-cell;
+        height: inherit;
+    }
+
+    &-text {
+        line-height: $control-height;
+        padding: 0 $control-padding;
+        text-align: left;
+    }
+
+    &-placeholder {
+        color: $control-placeholder-color;
+    }
+
+    &-tick {
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polyline points="1.5 3.8 6 8.3 10.5 3.8" style="fill:transparent;stroke:#000;stroke-linecap:round;stroke-linejoin:round"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: $width-tick;
+    }
+
+
+    &-search {
+        background: $control-background;
+        border: none;
+        box-sizing: border-box !important;
+        display: none;
+        font-size: 0.9em;
+        margin: 0;
+        top: 0; left: 0;
+        position: absolute;
+        padding: 0px $control-padding;
+        width: 100%;
+        height: $control-height;
+    }
+
+
+
+    &-list {
+        background: #fff;
+        border: $control-border;
+        display: none;
+        padding: 3px 0;
+        margin: 0;
+        margin-top: -1px;
+        position: absolute;
+        max-height: ($control-height * 6) + 9px;
+        overflow-y: auto;
+        z-index: 2;
+    }
+
+    &-item {
+        cursor: pointer;
+        list-style: none;
+        padding: 7px ($control-padding * 2);
+        padding-left: 35px;
+        white-space: nowrap;
+
+        &__hover {
+            background-color: $control-hover-background;
+        }
+
+        &__selected {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><polyline points="0.5 8.5 5 13 13.5 3.5" style="fill:transparent;stroke:#000;stroke-linecap:round;stroke-linejoin:round"/></svg>');
+            background-repeat: no-repeat;
+            background-position: 10px center;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+// .ui-select
+// {
+//     display: inline-block;
+//     vertical-align: top;
+//     min-width: 100px;
+//     box-sizing: border-box;
+//     position: relative;
+
+//     &.form-control { display: block; }
+
+//     &-btn
+//     {
+//         border: $control-border;
+//         border-radius: 3px;
+//         background: $control-background;
+
+//         height: $control-control-height;
+//         padding-left: 0;
+//         padding-right: 42px;
+//         text-align: left;
+//         min-width: inherit;
+//         width: inherit;
+//         position: relative;
+//         font-size: 15px;
+//         // font-weight: 600;
+
+//         &.focus {
+//             // border-width: 3px;
+//             box-shadow: inset 0 0 0 12px #cfd8dc;
+//             // border-color: transparent;
+//             // box-shadow: 0 0 5px $brand-primary;
+//         }
+
+//         @at-root .ui-select.form-control .ui-select-btn {
+//             display: block;
+//             width: 100%;
+//         }
+
+//         @at-root .ui-select.form-control--large .ui-select-btn {
+//             height: $control-control-height;
+//             font-size: 16px;
+//         }
+
+//         .ui-select-btn__text
+//         {
+//             display: block;
+//             overflow: hidden;
+//             text-overflow: ellipsis;
+//             margin-left: 15px;
+//             white-space: nowrap;
+//             word-wrap: normal;
+
+//             -ms-user-select: none;
+//             -moz-user-select: none;
+//             -khtml-user-select: none;
+//             -webkit-user-select: none;
+
+//             @at-root .ui-select.form-control--required .ui-select-btn .ui-select-btn__text.placeholder:before {
+//                 content: '*';
+//                 display: inline;
+//                 color: red;
+//             }
+
+//             &.placeholder
+//             {
+//                 color: #7b7b7b;
+//                 font-weight: normal;
+//             }
+//         }
+
+//         .ui-select-btn__tick
+//         {
+//             background: 50% no-repeat;
+//             //background-image: url('data:image/svg+xml,<svg xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width%3D"11" height%3D"6"><path d%3D"M10.3 0L5.5 4.7.7 0 0 .7 5.5 6 11 .7z"%2F><%2Fsvg>');
+//             transition: transform .05s ease-out;
+//             text-align: center;
+//             width: 33px;
+//             height: ($control-control-height - 2);
+//             display: inline-block;
+//             position: absolute;
+//             top: 0;
+//             right: 0;
+
+//             @at-root .ui-select.form-control--large .ui-select-btn .ui-select-btn__tick {
+//                 height: ($control-control-height - 2px);
+//             }
+
+//             &:before {
+//                 $width: 10px;
+//                 $height: 6px;
+//                 content: '';
+//                 display: block;
+//                 width: 0;
+//                 height: 0;
+//                 margin: (-$height / 2) 0 0 (-$width / 2);
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 50%;
+//                 border-top: $height solid darken($control-background, 15%);
+//                 border-right: ($width / 2) solid transparent;
+//                 border-left: ($width / 2) solid transparent;
+//             }
+//         }
+//     }
+
+//     &.ui-disabled
+//     {
+//         .ui-select-btn
+//         {
+//             // @extend .ui-button:active;
+//             background-color: $control-background__disabled;
+//             border-color: $control-border;
+//             cursor: default;
+
+//             .ui-select-btn__tick
+//             {
+//                 opacity: .3;
+//             }
+//         }
+//     }
+
+
+//     .ui-select__list
+//     {
+//         background: #FFF;
+//         border: $control-border;
+//         box-shadow: 0px 10px 20px 1px rgba(0,0,0,.1);
+//         display: none;
+//         margin-top: 2px;
+//         margin-left: 0;
+
+//         padding: 3px 0;
+//         position: absolute;
+//         z-index: $ui-zindex-dropdown;
+
+//         max-height: ($control-height * 0.9) * 8 + 3;
+//         overflow-y: auto;
+
+
+//         //&::-webkit-scrollbar              { width: 5px;}
+//         //&::-webkit-scrollbar-button       { /* 2 - кнопка */ }
+//         //&::-webkit-scrollbar-track        {  }
+//         //&::-webkit-scrollbar-track-piece  { }
+//         //&::-webkit-scrollbar-thumb        {
+//         //  border-radius: 5px;
+//         //  background: #ccc;
+//         //}
+//         //&::-webkit-scrollbar-corner       {
+//         //  background-color: red; }
+//         //&::-webkit-resizer                { /* 7 - изменение размеров */ }
+//     }
+
+
+//     .ui-select__listItem
+//     {
+//         cursor: pointer;
+//         display: block;
+//         list-style: none;
+//         padding-left: 32px;
+//         padding-right: 30px;
+//         padding-top: 0px;
+//         padding-bottom: 0px;
+
+//         line-height: ($control-control-height * 0.9) !important;
+
+//         font-size: 15px;
+//         color: #7b7b7b;
+
+//         -ms-user-select: none;
+//         -moz-user-select: none;
+//         -khtml-user-select: none;
+//         -webkit-user-select: none;
+
+//         white-space: nowrap;
+//         word-wrap: normal;
+
+//         &:hover,
+//         &.focus
+//         {
+//             background-color: lighten(#00aeff, 45) !important;
+//             // color: #000;
+//         }
+
+//         &.selected
+//         {
+//             background: 50% no-repeat;
+//             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="16"><path d="M13.5.5l-8 12L1.7 8l-1 1.6L5.6 15l9.1-13.4z"/></svg>');
+//             background-position: 10px;
+//             background-repeat: no-repeat;
+//             color: #000;
+//             font-weight: 600;
+//         }
+
+//         &.clearItem
+//         {
+//             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M10 .7L9.3 0 5 4.3.7 0 0 .7 4.3 5 0 9.3l.7.7L5 5.7 9.3 10l.7-.7L5.7 5z"/></svg>');
+//             background-repeat: no-repeat;
+//             background-position: 12px 11px;
+//         }
+//     }
+
+
+//     .ui-select__title
+//     {
+//         color: #aaa;
+//         cursor: default;
+//         display: block;
+//         list-style: none;
+//         padding-top: 0px;
+//         padding-bottom: 0px;
+
+//         line-height: ($control-control-height * 0.9) !important;
+
+//         font: $control-font-size $ui-font-family;
+
+//         -ms-user-select: none;
+//         -moz-user-select: none;
+//         -khtml-user-select: none;
+//         -webkit-user-select: none;
+
+//         .ui-select__title-text
+//         {
+//             padding-left: 11px;
+//             padding-right: 30px;
+//         }
+
+//         .ui-select__group
+//         {
+//             margin: 0;
+//             padding: 0;
+//             color: #000;
+//         }
+
+//     }
+
+//     .ui-select__separator
+//     {
+//         background: #f4f4f4;
+//         height: 1px;
+//         margin-top: 5px;
+//         margin-bottom: 5px;
+//     }
+
+
+//     // Раскрытый список
+//     &.ui-select-open
+//     {
+//         .ui-select-btn {
+//             box-shadow: inset 0 0 0 1px rgba(0, 175, 255, .5);
+//             border-color: rgba(0, 175, 255, .5);
+//             outline: none;
+//         }
+
+//         .ui-select-btn__tick
+//         {
+//             transform: rotate(-180deg);
+//         }
+
+//         .ui-select__list
+//         {
+//             display: block;
+//         }
+//     }
+
+//     // для поиска в списке
+//     .ui-select__search
+//     {
+//         display: none;
+//         box-sizing: border-box;
+//         border: none;
+//         position: absolute;
+//         z-index: 9;
+//         padding: 0 10px;
+//         width: 80%;
+//         min-width: inherit;
+//         left: 0;
+//         height: $ui-control-height - 6;
+//         margin: -35px 6px;
+//         margin-right: -3px;
+//         outline: none;
+//     }
+
+
+//     &.form-control {
+//         &.col-xs-1, &.col-xs-2, &.col-xs-3,
+//         &.col-xs-4, &.col-xs-5, &.col-xs-6,
+//         &.col-xs-7, &.col-xs-8, &.col-xs-9,
+//         &.col-xs-10, &.col-xs-11, &.col-xs-12 {
+//             padding-left: 0;
+//             padding-right: 0;
+//         }
+
+//         &--large {
+//             .ui-select__search {
+//                 margin: -38px 6px !important;
+//             }
+//         }
+//     }
+// }
+
+
+// .ui-select-group
+// {
+//     .ui-select {
+
+//         margin-left: -1px;
+
+//         .ui-select-btn
+//         {
+//             border-radius: 0;
+//         }
+
+//         &:first-of-type
+//         {
+//             margin-left: 0;
+
+//             .ui-select-btn
+//             {
+//                 border-top-left-radius: 3px;
+//                 border-bottom-left-radius: 3px;
+//             }
+//         }
+
+
+//         &:last-of-type
+//         {
+//             .ui-select-btn
+//             {
+//                 border-top-right-radius: 3px;
+//                 border-bottom-right-radius: 3px;
+//             }
+//         }
+
+//     }
+
+// }
+
+
+// .ui-select__groupItems
+// {
+//     .ui-select__group {
+//         padding-left: 0 !important;
+
+//         .ui-select__listItem
+//         {
+//             padding-left: 40px;
+//         }
+//     }
+
+// }

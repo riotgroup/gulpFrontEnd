@@ -1,0 +1,28 @@
+{% extends 'Layout.twig' %}
+{% block CONTENT %}
+
+<div class="window">
+
+    <h2>Form controls</h2>
+
+    <p><strong>Марка</strong></p>
+    {{ forms.ui_select('car_mark', {}, null, 'placeholder="Марка" data-search="true" data-auto="marks" onchange="Auto.models(this.value)"') }}
+
+    <p><strong>Модель</strong></p>
+    {{ forms.ui_select('car_model', {}, null, 'placeholder="Модель" data-auto="models" onchange="Auto.years(this.value);"') }}
+
+    <p><strong>Год</strong></p>
+    {{ forms.ui_select('car_year', {}, null, "placeholder='Год выпуска' data-auto='years' onchange='Auto.generations(this.value);'") }}
+
+    <p><strong>Поколение</strong></p>
+    {{ forms.ui_select('car_generation', {}, null, 'placeholder="Поколение" data-auto="generation" onchange="Auto.series(this.value);"') }}
+
+    <p><strong>Серия</strong></p>
+    {{ forms.ui_select('car_series', {}, null, 'placeholder="Серия" data-auto="series" onchange="Auto.modifications(this.value);"') }}
+
+    <p><strong>Модификация</strong></p>
+    {{ forms.ui_select('car_modified', {}, null, 'placeholder="Модификация" data-auto="modification"') }}
+
+</div>
+
+{% endblock %}

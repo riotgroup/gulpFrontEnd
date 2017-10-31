@@ -1,0 +1,40 @@
+.carousel-3d-slide {
+    background: none !important;
+    border: none !important;
+
+    figure {
+        background: none;
+        margin: 0;
+        position: relative;
+
+        img {
+            border-radius: 3px;
+        }
+
+        iframe {
+            border-radius: 3px;
+            // display: none;
+            width: 100%;
+            height: 204px;
+            position: relative;
+        }
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    &.current {
+        display: block;
+        // position: absolute;
+
+        img {
+            z-index: 10000;
+        }
+
+        figcaption {
+            display: block;
+            position: absolute;
+        }
+    }
+}

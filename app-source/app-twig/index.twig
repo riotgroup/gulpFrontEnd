@@ -1,0 +1,15 @@
+{% extends 'Layout.twig' %}
+
+
+{% set SCRIPTS = ['Assets/bower/vue/dist/vue.min.js', 'https://www.youtube.com/iframe_api'] %}
+
+{% block CONTENT %}
+
+{% include "Partials/Home/PhotoSlider.twig" %}
+<div class="container">
+    {% include "Partials/Home/ReviewSlider.twig" %}
+    {% include "Partials/Developers/Grids.twig" %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>Layout templates</title>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="stylesheet" href="Assets/styles/app.css">
+
+        <script type="text/javascript" src="Assets/bower/jquery/dist/jquery.min.js"></script>
+        
+        <script type="text/javascript" src="Assets/scripts/app.js"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="page">
+        <div class="wrapper">
+            <header class="header">
+    <div class="header-container">
+        <div class="header-logotype">
+            <a href="/"><img src="Assets/images/logotype.svg" alt=""></a>
+        </div>
+
+        <nav class="header-navigation">
+            <ul class="header-navigation__list">
+                <li class="header-navigation__item"><a class="header-navigation__link" href="javascript:void();">Завершенные сделки</a></li>
+                <li class="header-navigation__item"><a class="header-navigation__link" href="javascript:void();">Стать партнером</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-navigation__profile">
+            <a href="#" class="header-navigation__profile-link">Вход для партнеров</a>
+        </div>
+    </div>
+</header>
+            <div class="page-container">
+
+<div class="window">
+
+    <h2>Form controls</h2>
+
+    <p><strong>Марка</strong></p>
+    
+<select name="car_mark" data-ui="true" placeholder="Марка" data-search="true" data-auto="marks" onchange="Auto.models(this.value)">
+    
+</select>
+
+
+    <p><strong>Модель</strong></p>
+    
+<select name="car_model" data-ui="true" placeholder="Модель" data-auto="models" onchange="Auto.years(this.value);">
+    
+</select>
+
+
+    <p><strong>Год</strong></p>
+    
+<select name="car_year" data-ui="true" placeholder='Год выпуска' data-auto='years' onchange='Auto.generations(this.value);'>
+    
+</select>
+
+
+    <p><strong>Поколение</strong></p>
+    
+<select name="car_generation" data-ui="true" placeholder="Поколение" data-auto="generation" onchange="Auto.series(this.value);">
+    
+</select>
+
+
+    <p><strong>Серия</strong></p>
+    
+<select name="car_series" data-ui="true" placeholder="Серия" data-auto="series" onchange="Auto.modifications(this.value);">
+    
+</select>
+
+
+    <p><strong>Модификация</strong></p>
+    
+<select name="car_modified" data-ui="true" placeholder="Модификация" data-auto="modification">
+    
+</select>
+
+
+</div>
+
+</div>
+        </div>
+    </body>
+</html>

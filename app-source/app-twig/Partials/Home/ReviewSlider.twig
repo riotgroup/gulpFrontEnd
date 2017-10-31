@@ -1,0 +1,87 @@
+<div class="review-header">
+    <h2 class="review-header__title">Отзывы наших клиентов</h2>
+</div>
+
+
+<div id="SliderReviews">
+    <carousel-3d :display="3" :perspective="35" :space="460" :height="302" :autoplay="true" :autoplayHoverPause="true" :autoplay-timeout="5000" :controls-visible="false">
+
+        <slide :index="0">
+            <figure>
+                <img src="Assets/images/DataDemo/review_2.jpg">
+                <figcaption>
+                    <strong>Орлов Александр</strong><br>
+                    Audi A4, 2012 г.<br>
+                    <small>Дата продажи: вчера в 17:45</small>
+                </figcaption>
+            </figure>
+        </slide>
+
+        <slide :index="1">
+            <figure>
+                <img src="Assets/images/DataDemo/review_3.jpg">
+                <figcaption>
+                    <strong>Генри Ватсон</strong><br>
+                    Volkswagen Passat, 2009 г.<br>
+                    <small>Дата продажи: 20 октября в 10:00</small>
+                </figcaption>
+            </figure>
+        </slide>
+
+        <slide :index="2">
+            <figure>
+                <img src="Assets/images/DataDemo/review_1.jpg">
+                <figcaption>
+                    <strong>Светлаков Олег</strong><br>
+                    Mazda CX7, 2011 г.<br>
+                    <small>Дата продажи: вчера в 11:20</small>
+                </figcaption>
+            </figure>
+        </slide>
+
+    </carousel-3d>
+</div>
+
+
+<script type="text/javascript">
+
+    new Vue({
+            el: '#SliderReviews',
+            data: {
+                slides: 7
+            },
+            components: {
+                'carousel-3d': Carousel3d.Carousel3d,
+                'slide': Carousel3d.Slide
+            }
+        });
+
+
+    // M7lc1UVf-VE
+    var $reviews = $('#SliderReviews').find('figure');
+    $.each($reviews,
+        function(index, item) {
+            var player_name = 'player' + index;
+
+            // Создаем экземпляр плеера
+            $(this).find('img').click(function(){
+                $(this).after('<div id="'+ player_name +'"></div>');
+                $(this).hide();
+
+                var player = new YT.Player(player_name, {
+                    videoId: 'M7lc1UVf-VE',
+                    events: {
+                        'onReady': onPlayerReady,
+                    }
+                });
+            });
+        }
+    );
+
+
+    function onPlayerReady(event)
+    {
+        event.target.playVideo();
+    }
+
+</script>

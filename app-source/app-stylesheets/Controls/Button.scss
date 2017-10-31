@@ -1,0 +1,122 @@
+@mixin default_btn {
+    border: $control-border;
+    background-color: $control-background;
+    border-radius: $control-border-radius;
+    color: $brand-color-black;
+    display: inline-block;
+    padding: 3px ($control-padding + ($control-padding / 2)) 0;
+    line-height: $control-height;    
+    font-size: 0.86em;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+[type=submit].form-control,
+[type=button].form-control,
+.button {
+    @include default_btn();
+
+    &[disabled] {
+        border-color: $control-background__disabled !important;
+        background-color: $control-background;
+        color: darken($control-background__disabled, 25%) !important;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $control-background;
+        }
+    }
+
+    &__link {
+        background: none;
+        border: none;
+        text-decoration: underline;
+
+        &:hover {}
+    }
+
+    &__default {
+        border-color: $brand-color-default;
+        background: $brand-color-default;
+        color: #FFF;
+        &:hover {
+            border-color: mix(#FFF, $brand-color-default, 20%);
+            background: mix(#FFF, $brand-color-default, 20%);
+        }
+    }
+
+    &__primary {
+        border-color: $brand-color-primary;
+        background: $brand-color-primary;
+        color: #FFF;
+        &:hover {
+            border-color: mix(#FFF, $brand-color-primary, 10%);
+            background: mix(#FFF, $brand-color-primary, 10%);
+        }
+    }
+
+    &__secondary {
+        border-color: $brand-color-secondary;
+        background: $brand-color-secondary;
+        color: #FFF;
+
+        &:hover {
+            border-color: mix(#FFF, $brand-color-secondary, 20%);
+            background: mix(#FFF, $brand-color-secondary, 20%);
+        }
+    }
+}
+
+
+[type=submit].form-control-o,
+[type=button].form-control-o,
+.button-o {
+    @include default_btn();
+    background: none;
+
+    &__link {
+        background: none;
+        border: none;
+        // color: $link-color;
+        text-decoration: underline;
+
+        &:hover {
+            // color: $link-color__hover;
+        }
+    }
+
+    &__default {
+        border-color: $brand-color-default;
+        color: $brand-color-default;
+
+        &:hover {
+            background-color: $brand-color-default;
+            color: #FFF;
+        }
+    }
+
+    &__primary {
+        border-color: $brand-color-primary;
+        color: $brand-color-primary;
+
+        &:hover {
+            background-color: $brand-color-primary;
+            color: #FFF;
+        }
+    }
+
+    &__secondary {
+        border-color: $brand-color-secondary;
+        color: $brand-color-secondary;
+
+        &:hover {
+            background-color: $brand-color-secondary;
+            color: #FFF;
+        }
+    }
+
+}
+
